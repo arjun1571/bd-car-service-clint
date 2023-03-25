@@ -1,15 +1,11 @@
-
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
+import router from './Router/Routes';
 
 function App() {
   return (
-    <div className="App">
-      <button className="btn btn-active">Button</button>
-      <button className="btn btn-active btn-primary">Button</button>
-      <button className="btn btn-active btn-secondary">Button</button>
-      <button className="btn btn-active btn-accent">Button</button>
-      <button className="btn btn-active btn-ghost">Button</button>
-      <button className="btn btn-active btn-link">Button</button>
+    <div className='max-w-screen-xl mx-auto'>
+      <RouterProvider router={router} />
     </div>
   );
 }
