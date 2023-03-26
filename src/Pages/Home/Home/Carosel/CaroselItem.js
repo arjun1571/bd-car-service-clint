@@ -3,7 +3,7 @@ import React from 'react';
 const CaroselItem = ({slide}) => {
     const {image,id,next,previous}=slide;
     return (
-        <div id={`slide${id}`} className="carousel-item relative w-full">
+        <div id={`slide${id}`} className="carousel-item relative w-full ">
                 <div className='carosel-image'>
                 <img src={image} alt='' className="w-full " />
                 </div>
