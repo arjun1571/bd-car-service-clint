@@ -1,5 +1,6 @@
 import {createBrowserRouter} from "react-router-dom";
 import Main from "../LayOut/Main";
+import CheakOut from "../Pages/CheakOut/CheakOut";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/login/Login";
 import SignIn from "../Pages/Singin/SignIn";
@@ -21,6 +22,10 @@ import SignIn from "../Pages/Singin/SignIn";
         {
             path:"/signin",
             element: <SignIn></SignIn>
+        },
+        {
+            path:"/cheakout/:id",
+            element: <CheakOut></CheakOut>
         },
       ]
     },

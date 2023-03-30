@@ -31,7 +31,7 @@ const Header = () => {
             </div>
             <div className="navbar-end">
             <button className="btn btn-warning">Atuthini</button>
-            <p>{user.email}</p>
+            <p>{user?.email}</p>
             
             </div>
             
