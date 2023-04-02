@@ -12,7 +12,6 @@ const CheakOut = () => {
         const email = user?.email || 'unregister';
         const message = form.message.value;
         const phone= form.yourPhone.value;
-        console.log(name,email,message,phone);
 
         const order = {
             service: _id,

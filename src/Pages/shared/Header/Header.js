@@ -7,7 +7,11 @@ const Header = () => {
     const {user}=useContext(AuthContext)
     const menuItems = <>
         <li className='font-semibold'><Link to="/">Home</Link></li>
-        <li className='font-semibold'><Link to="/login">login</Link></li>
+       { user?.email ?
+       <li className='font-semibold'><Link to="/orders">Orders</Link></li>
+       :
+       <li className='font-semibold'><Link to="/login">login</Link></li>
+       }
     </>
     return (
         <div className="navbar h-20 bg-base-100 mb-12 mt-10">
