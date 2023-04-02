@@ -4,6 +4,7 @@ import CheakOut from "../Pages/CheakOut/CheakOut";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/login/Login";
 import SignIn from "../Pages/Singin/SignIn";
+import Order from "../Pages/Order/Order";
 
 
   const router = createBrowserRouter([
@@ -25,7 +26,12 @@ import SignIn from "../Pages/Singin/SignIn";
         },
         {
             path:"/cheakout/:id",
-            element: <CheakOut></CheakOut>
+            element: <CheakOut></CheakOut>,
+            loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+        },
+        {
+            path:"/orders",
+            element: <Order></Order>,
         },
       ]
     },
