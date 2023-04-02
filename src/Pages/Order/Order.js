@@ -28,6 +28,28 @@ const Order = () => {
             })
         }
 }
+const handoleStatusUpdate = id =>{
+    fetch(`http://localhost:5000/orders/${id}`,{
+        method: "PATCH",
+        headers:{
+            "content-type":"application/json"
+        },
+        body: JSON.stringify({status:"APProved"})
+        
+    })
+    .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            if(data.modifiedCount > 0){
+                const remaining = order.filter(odr => odr._id !== id)
+                const approving = order.find(odr => odr._id === id)
+                approving.status = "Approved"
+
+                const newOrders = [approving,...remaining];
+                setOrder(newOrders)
+            }
+        })
+}
     return (
         <div>
             <div className="overflow-x-auto w-full">
@@ -48,7 +70,7 @@ const Order = () => {
                     </thead>
                     <tbody>
                         {
-                            order?.map(od=><OrderRow od={od} key={od._id} deleteOrder={deleteOrder}></OrderRow>)
+                            order?.map(od=><OrderRow od={od} key={od._id} deleteOrder={deleteOrder} handoleStatusUpdate={handoleStatusUpdate}></OrderRow>)
                         }
                     </tbody>
                 </table>
