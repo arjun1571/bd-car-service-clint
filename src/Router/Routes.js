@@ -5,6 +5,7 @@ import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/login/Login";
 import SignIn from "../Pages/Singin/SignIn";
 import Order from "../Pages/Order/Order";
+import PrivateRouter from "./PrivateRouter";
 
 
   const router = createBrowserRouter([
@@ -26,12 +27,12 @@ import Order from "../Pages/Order/Order";
         },
         {
             path:"/cheakout/:id",
-            element: <CheakOut></CheakOut>,
+            element: <PrivateRouter><CheakOut></CheakOut></PrivateRouter>,
             loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`)
         },
         {
             path:"/orders",
-            element: <Order></Order>,
+            element: <PrivateRouter><Order></Order></PrivateRouter>,
         },
       ]
     },
