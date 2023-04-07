@@ -28,7 +28,7 @@ import PrivateRouter from "./PrivateRouter";
         {
             path:"/cheakout/:id",
             element: <PrivateRouter><CheakOut></CheakOut></PrivateRouter>,
-            loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+            loader:({params}) => fetch(`https://bd-car-service-server.vercel.app/services/${params.id}`)
         },
         {
             path:"/orders",

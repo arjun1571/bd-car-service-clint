@@ -6,7 +6,7 @@ const Order = () => {
     const {user}=useContext(AuthContext)
     const [order,setOrder]=useState([])
     useEffect(()=>{
-        fetch(`http://localhost:5000/orders?email=${user?.email}`)
+        fetch(`https://bd-car-service-server.vercel.app/orders?email=${user?.email}`)
         .then(res=>res.json())
         .then(data=>setOrder(data))
     }, [user?.email])
@@ -14,7 +14,7 @@ const Order = () => {
     const deleteOrder =(id)=>{
         const proced = window.confirm("are you sure delete thid item");
         if(proced){
-            fetch(`http://localhost:5000/orders/${id}`,{
+            fetch(`https://bd-car-service-server.vercel.app/orders/${id}`,{
                 method: "DELETE"
             })
             .then(res=>res.json())
@@ -29,7 +29,7 @@ const Order = () => {
         }
 }
 const handoleStatusUpdate = id =>{
-    fetch(`http://localhost:5000/orders/${id}`,{
+    fetch(`https://bd-car-service-server.vercel.app/orders/${id}`,{
         method: "PATCH",
         headers:{
             "content-type":"application/json"

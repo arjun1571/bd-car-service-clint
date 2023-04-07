@@ -2,7 +2,7 @@ import React from 'react';
 import { FaLocationArrow,FaCalendarAlt,FaPhoneAlt } from 'react-icons/fa';
 const Contact = () => {
     return (
-        <div className='bg-slate-900 h-40 text-white flex justify-around p-10 my-10'>
+        <div className='bg-slate-900 h-40 text-white  grid sm:grid-cols-1 lg:grid-cols-3'>
             <div className='flex items-center'>
                 <div className='mr-5'>
                     <FaCalendarAlt></FaCalendarAlt>
